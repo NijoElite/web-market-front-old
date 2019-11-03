@@ -6,6 +6,11 @@ const initialState = {
   loggedInUser: null,
 };
 
-const rootReducer = (state = initialState, action) => state;
+interface Action {
+  type: string;
+  payload?: any;
+}
+
+const rootReducer = (state = initialState, action: Action) => state;
 
 export default rootReducer;
