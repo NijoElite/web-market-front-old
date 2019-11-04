@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 import { Burger } from '../Burger/Burger.component';
 import { linkColor, mediaMd, transition } from '../../../utils/css.utils';
 
@@ -12,6 +12,7 @@ const HeaderStyled = styled('div')<{open: boolean}>`
   right: 0;
   background: #ffc608;
   padding: 15px;
+  z-index: 1000;
 
   visibility: ${({open}): string => open ? 'visible' : 'hidden'};
   opacity: ${({open}): string => open ? '1' : '0'};

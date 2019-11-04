@@ -1,5 +1,5 @@
-import React, {memo, FC, useState} from 'react';
-import styled from '@emotion/styled';
+import React, {memo, FC} from 'react';
+import styled from '@emotion/styled/macro';
 import { mediaMd, linkReset, transition, linkColor } from '../../../utils/css.utils';
 import HeaderData from '../HeaderData';
 import { Icon } from '../../Icon/Icon.component';

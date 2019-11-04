@@ -1,5 +1,5 @@
 import React, {memo, FC, useState} from 'react';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 import {Container} from '../../ui-kit/container/Container.component';
 import {linkReset, transition, linkColor, mediaMd} from '../../utils/css.utils';
 import HeaderData from './HeaderData';
@@ -10,10 +10,15 @@ import { CategoryNav } from './CategoryNav/CategoryNav.component';
 // #region styled
 const HeaderStyled = styled.header`
   background: #ffffff;
-  position: relative;
-
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  
   ${mediaMd} {
     padding-top: 15px;
+    position: relative;
+
   }
 `;
 
@@ -128,9 +133,11 @@ export const Header: FC<HeaderProps> = memo(({className}) => {
   return (
     <HeaderStyled>
       <Container>
+        
         <TopHeader>
           <MobileHeader/>
           <Logo/>
+          
           <NavColumnStyled>
             <Links/>
             <SearchFormStyled>

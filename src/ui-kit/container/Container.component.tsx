@@ -1,5 +1,5 @@
 import {FC, memo} from 'react';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 import * as React from 'react';
 import {mediaLg, mediaMd} from '../../utils/css.utils';
 
