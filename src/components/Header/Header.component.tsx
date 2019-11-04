@@ -3,8 +3,9 @@ import styled from '@emotion/styled/macro';
 import {Container} from '../../ui-kit/Container/Container.component';
 import {linkReset, linkColor, mediaMd} from '../../utils/css.utils';
 import { MobileHeader } from './MobileHeader/MobileHeader.component';
-import { CategoryNav } from './CategoryNav/CategoryNav.component';
+import { CategoryNav } from './CategoriesNav/CategoriesNav.component';
 import { SearchForm } from './SearchForm/SearchForm.component';
+import {desktopNavData} from './HeaderData';
 
 // #region styled
 const HeaderStyled = styled.header`
@@ -75,12 +76,6 @@ const Logo: FC = () => {
   );
 }
 
-const linksData = [
-  {text: 'Войти', link: '/login'},
-  {text: 'Регистрация', link: '/register'},
-  {text: 'Мои покупки', link: '/cart'},
-];
-
 interface LinkProps {
   href: string;
   text: string;
@@ -98,7 +93,7 @@ const Link: FC<LinkProps> = ({href, text, className}) => {
 const Links: FC = () => {
   return (
     <NavListStyled>
-      {linksData.map((el) => <Link href={el.link} text={el.text}/>)}
+      {desktopNavData.map((el) => <Link href={el.link} text={el.text}/>)}
     </NavListStyled>
   );
 };

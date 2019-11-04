@@ -1,7 +1,7 @@
 import React, {memo, FC} from 'react';
 import styled from '@emotion/styled/macro';
 import { mediaMd, linkReset, transition, linkColor } from '../../../utils/css.utils';
-import HeaderData from '../HeaderData';
+import {navCategoriesData} from '../HeaderData';
 import { Icon } from '../../../ui-kit/Icon/Icon.component';
 import { Container } from '../../../ui-kit/Container/Container.component';
 
@@ -22,7 +22,7 @@ const CategoryItemStyled = styled.a`
   ${transition('all')};
   ${linkColor('#000000')};
 
-  width: ${100 / HeaderData.categories.length}%;
+  width: ${100 / navCategoriesData.categories.length}%;
   text-align: center;
   font-size: 39px;
   padding: 15px 0;
@@ -56,8 +56,8 @@ const NavWrapperStyled = styled.div`
 `;
 
 const catNameToUnicode = (catName: string): string => {
-  const cat = HeaderData.categories.find((el) => el.catName === catName)
-  return cat ? cat.unicode : HeaderData.defaultCategory.unicode;
+  const cat = navCategoriesData.categories.find((el) => el.catName === catName)
+  return cat ? cat.unicode : navCategoriesData.defaultCategory.unicode;
 }
 
 interface CategoryItemProps {
@@ -82,7 +82,7 @@ export const CategoryNav: FC = () => {
     <NavWrapperStyled>  
       <Container>
         <NavStyled>
-          {HeaderData.categories.map((data) => {
+          {navCategoriesData.categories.map((data) => {
             return <CategoryItem catName={data.catName} displayName={data.displayName} key={data.catName}/>
           })}
         </NavStyled>

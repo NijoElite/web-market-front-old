@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import styled from '@emotion/styled/macro';
 import { Burger } from '../Burger/Burger.component';
 import { linkColor, mediaMd, transition } from '../../../utils/css.utils';
+import {mobileNavData} from '../HeaderData';
 
 // #region styled
 const HeaderStyled = styled('div')<{open: boolean}>`
@@ -59,23 +60,10 @@ const BurgerStyled = styled(Burger)`
 `;
 // #endregion
 
-const dataLinks = [
-  [
-    {text: 'Войти', link: '/login'},
-    {text: 'Регистрация', link: '/register'},
-    {text: 'Мои покупки', link: '/cart'},
-  ],
-  [
-    {text: 'Каталог игр', link: '/catalog'},
-    {text: 'Новинки', link: '/newgames'},
-    {text: 'Лидеры продаж', link: '/top'},
-  ],
-];
-
 export const MobileHeader: FC = () => {
   const [open, setOpen] = useState(false);
 
-  const items = dataLinks.map((list) => {
+  const items = mobileNavData.map((list) => {
     return (
     <ListStyled>
       {list.map((item) => 
