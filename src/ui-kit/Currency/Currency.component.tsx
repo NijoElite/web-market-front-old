@@ -1,6 +1,4 @@
 import React, { FC } from 'react';
-import {Game} from '../../models/Interfaces';
-import { linkColor } from '../../utils/css.utils';
 import styled from '@emotion/styled/macro';
 
 // #region styled

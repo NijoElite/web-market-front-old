@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {Header} from './components/Header/Header.component';
-import { GameCard } from './components/GameCard/GameCard.component';
-import { Game } from './models/Interfaces';
+import { Game } from './models/interfaces';
 import { Catalog } from './components/Catalog/Catalog.component';
-import { Container } from './ui-kit/container/Container.component';
+import { Container } from './ui-kit/Container/Container.component';
 import styled from '@emotion/styled/macro';
 import { mediaMd } from './utils/css.utils';
 

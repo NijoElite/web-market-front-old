@@ -1,11 +1,10 @@
-import React, {memo, FC, useState} from 'react';
+import React, {memo, FC} from 'react';
 import styled from '@emotion/styled/macro';
-import {Container} from '../../ui-kit/container/Container.component';
-import {linkReset, transition, linkColor, mediaMd} from '../../utils/css.utils';
-import HeaderData from './HeaderData';
-import {Icon} from '../Icon/Icon.component';
+import {Container} from '../../ui-kit/Container/Container.component';
+import {linkReset, linkColor, mediaMd} from '../../utils/css.utils';
 import { MobileHeader } from './MobileHeader/MobileHeader.component';
 import { CategoryNav } from './CategoryNav/CategoryNav.component';
+import { SearchForm } from './SearchForm/SearchForm.component';
 
 // #region styled
 const HeaderStyled = styled.header`
@@ -19,26 +18,6 @@ const HeaderStyled = styled.header`
     padding-top: 15px;
     position: relative;
 
-  }
-`;
-
-const StyledInput = styled.input`
-  width: 100%;
-  border: 2px solid #ffc608;
-  border-radius: 5px;
-  padding: 5px 15px;
-  height: 44px;
-  outline: none;
-  box-sizing: border-box;
-`;
-
-const SearchFormStyled = styled.form`
-  display: flex;
-  align-items: center;
-  height: 100%;
-
-  ${mediaMd} {
-    height: auto;
   }
 `;
 
@@ -71,7 +50,6 @@ const NavListStyled = styled.ul`
   list-style-type: none;
   display: none;
   justify-content: flex-end;
-  
 
   & li:not(:first-child) {
     margin-left: 30px;
@@ -131,18 +109,15 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = memo(({className}) => {
   return (
-    <HeaderStyled>
-      <Container>
-        
+    <HeaderStyled className={className}>
+      <Container> 
         <TopHeader>
           <MobileHeader/>
           <Logo/>
           
           <NavColumnStyled>
             <Links/>
-            <SearchFormStyled>
-              <StyledInput placeholder='Поиск игр...  '/>
-            </SearchFormStyled>
+            <SearchForm/>
           </NavColumnStyled>
         </TopHeader>
       </Container>

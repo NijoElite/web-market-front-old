@@ -2,8 +2,8 @@ import React, {memo, FC} from 'react';
 import styled from '@emotion/styled/macro';
 import { mediaMd, linkReset, transition, linkColor } from '../../../utils/css.utils';
 import HeaderData from '../HeaderData';
-import { Icon } from '../../Icon/Icon.component';
-import { Container } from '../../../ui-kit/container/Container.component';
+import { Icon } from '../../../ui-kit/Icon/Icon.component';
+import { Container } from '../../../ui-kit/Container/Container.component';
 
 const NavStyled = styled.nav`
   display: none;

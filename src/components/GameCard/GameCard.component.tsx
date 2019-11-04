@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import {Game} from '../../models/Interfaces';
+import {Game} from '../../models/interfaces';
 import { linkColor } from '../../utils/css.utils';
 import styled from '@emotion/styled/macro';
-import { Currency } from '../../ui-kit/currency/Currency.component';
+import { Currency } from '../../ui-kit/Currency/Currency.component';
 
 // #region styled
 const ImageStyled = styled.img`
