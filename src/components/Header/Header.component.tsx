@@ -93,7 +93,7 @@ const Link: FC<LinkProps> = ({href, text, className}) => {
 const Links: FC = () => {
   return (
     <NavListStyled>
-      {desktopNavData.map((el) => <Link href={el.link} text={el.text}/>)}
+      {desktopNavData.map((el) => <Link href={el.link} text={el.text} key={el.link}/>)}
     </NavListStyled>
   );
 };

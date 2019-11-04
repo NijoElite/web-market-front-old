@@ -34,7 +34,7 @@ export const Catalog: FC<CatalogProps> = ({games, className}) => {
   return (
     <CatalogStyled className={className}>
       {games.map(game => (
-        <ColumnStyled>
+        <ColumnStyled key={game.article}>
           <GameCard game={game}/>
         </ColumnStyled>))}
     </CatalogStyled>

@@ -63,13 +63,15 @@ const BurgerStyled = styled(Burger)`
 export const MobileHeader: FC = () => {
   const [open, setOpen] = useState(false);
 
-  const items = mobileNavData.map((list) => {
+  const items = mobileNavData.map((list, i) => {
     return (
-    <ListStyled>
-      {list.map((item) => 
-      <ListItemStyled key={item.link}>
-        <a href={item.link}>{item.text}</a>
-      </ListItemStyled>)}
+    <ListStyled key={i}>
+      {
+        list.map((item) => 
+        <ListItemStyled key={item.link}>
+          <a href={item.link}>{item.text}</a>
+        </ListItemStyled>)
+      }
     </ListStyled>)
   });
 
