@@ -5,6 +5,7 @@ import {navCategoriesData} from '../HeaderData';
 import { Icon } from '../../../ui-kit/Icon/Icon.component';
 import { Container } from '../../../ui-kit/Container/Container.component';
 
+// #region styled
 const NavStyled = styled.nav`
   display: none;
   flex-direction: row;
@@ -39,8 +40,9 @@ const CategoryItemImageStyled = styled.div`
   width: 100%;
 `;
 
-const CategoryItemTextStyled = styled.div`
+const CategoryItemTextStyled = styled.p`
   font-size: 11px;
+  margin: 0;
   position: relative;
   text-transform: uppercase;
 `;
@@ -54,6 +56,7 @@ const NavWrapperStyled = styled.div`
     display: block;
   }
 `;
+// #endregion
 
 const catNameToUnicode = (catName: string): string => {
   const cat = navCategoriesData.categories.find((el) => el.catName === catName)
@@ -77,7 +80,7 @@ const CategoryItem: FC<CategoryItemProps> = memo(({className, catName, displayNa
   )  
 });
 
-export const CategoryNav: FC = () => {
+export const CategoriesNav: FC = () => {
   return (
     <NavWrapperStyled>  
       <Container>

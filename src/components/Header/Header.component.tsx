@@ -3,7 +3,7 @@ import styled from '@emotion/styled/macro';
 import {Container} from '../../ui-kit/Container/Container.component';
 import {linkReset, linkColor, mediaMd} from '../../utils/css.utils';
 import { MobileHeader } from './MobileHeader/MobileHeader.component';
-import { CategoryNav } from './CategoriesNav/CategoriesNav.component';
+import { CategoriesNav } from './CategoriesNav/CategoriesNav.component';
 import { SearchForm } from './SearchForm/SearchForm.component';
 import {desktopNavData} from './HeaderData';
 
@@ -90,11 +90,13 @@ const Link: FC<LinkProps> = ({href, text, className}) => {
   );
 }
 
-const Links: FC = () => {
+const TopNavLinks: FC = () => {
   return (
-    <NavListStyled>
-      {desktopNavData.map((el) => <Link href={el.link} text={el.text} key={el.link}/>)}
-    </NavListStyled>
+    <nav>
+      <NavListStyled>
+        {desktopNavData.map((el) => <Link href={el.link} text={el.text} key={el.link}/>)}
+      </NavListStyled>
+    </nav>
   );
 };
 
@@ -111,12 +113,12 @@ export const Header: FC<HeaderProps> = memo(({className}) => {
           <Logo/>
           
           <NavColumnStyled>
-            <Links/>
+            <TopNavLinks/>
             <SearchForm/>
           </NavColumnStyled>
         </TopHeader>
       </Container>
-      <CategoryNav/>
+      <CategoriesNav/>
     </HeaderStyled>
   );
 });

@@ -13,14 +13,8 @@ const mockData: Game = {
   description: 'fdghsftjsrj',
   price: 500,
 }
-const mockData2: Game = {
-  name: 'Game Of Year',
-  article: '123',
-  imgUrl: 'https://cdn.gabestore.ru/product/370x460_6R7NnRmnTojYrqUi98Bw_QOmv2pZsLlZ.png',
-  description: 'fdghsftjsrj',
-  price: 500,
-}
-const games = new Array(10).fill(mockData).concat(new Array(5).fill(mockData2));
+
+const games = [mockData];
 
 const Page = styled.div`
   padding-top: 65px;
