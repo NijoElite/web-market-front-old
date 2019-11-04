@@ -1,11 +1,12 @@
 import React, {memo, FC} from 'react';
 import styled from '@emotion/styled/macro';
 import {Container} from '../../ui-kit/Container/Container.component';
-import {linkReset, linkColor, mediaMd} from '../../utils/css.utils';
+import {linkReset, mediaMd} from '../../utils/css.utils';
 import { MobileHeader } from './MobileHeader/MobileHeader.component';
 import { CategoriesNav } from './CategoriesNav/CategoriesNav.component';
 import { SearchForm } from './SearchForm/SearchForm.component';
-import {desktopNavData} from './HeaderData';
+import { UserNav } from './UserNav/UserNav.component';
+import { SiteNav } from './SiteNav/SiteNav.component';
 
 // #region styled
 const HeaderStyled = styled.header`
@@ -42,29 +43,9 @@ const LogoStyled = styled.a`
   }
 `;
 
-const NavColumnStyled = styled.div`
+const TopColumnStyled = styled.div`
   width: 100%;
   padding: 0 15px;
-`;
-
-const NavListStyled = styled.ul`
-  list-style-type: none;
-  display: none;
-  justify-content: flex-end;
-
-  & li:not(:first-child) {
-    margin-left: 30px;
-  }
-
-  ${mediaMd} {
-    display: flex;
-  }
-`; 
-
-const LinkStyled = styled.a`
-  ${linkColor('#000')}
-  text-decoration: none;
-  font-size: 14px;
 `;
 // #endregion
 
@@ -75,30 +56,6 @@ const Logo: FC = () => {
     </LogoStyled>
   );
 }
-
-interface LinkProps {
-  href: string;
-  text: string;
-  className?: string;
-}
-
-const Link: FC<LinkProps> = ({href, text, className}) => {
-  return (
-    <li>
-      <LinkStyled className={className} href={href}>{text}</LinkStyled>
-    </li>
-  );
-}
-
-const TopNavLinks: FC = () => {
-  return (
-    <nav>
-      <NavListStyled>
-        {desktopNavData.map((el) => <Link href={el.link} text={el.text} key={el.link}/>)}
-      </NavListStyled>
-    </nav>
-  );
-};
 
 interface HeaderProps {
   className?: string;
@@ -111,13 +68,13 @@ export const Header: FC<HeaderProps> = memo(({className}) => {
         <TopHeader>
           <MobileHeader/>
           <Logo/>
-          
-          <NavColumnStyled>
-            <TopNavLinks/>
+          <TopColumnStyled>
+            <UserNav/>
             <SearchForm/>
-          </NavColumnStyled>
+          </TopColumnStyled>
         </TopHeader>
       </Container>
+      <SiteNav/>
       <CategoriesNav/>
     </HeaderStyled>
   );

@@ -25,8 +25,16 @@ export const mobileNavData = [
   ],
 ];
 
-export const desktopNavData = [
+export const UserNavData = [
   {text: 'Войти', link: '/login'},
   {text: 'Регистрация', link: '/register'},
   {text: 'Мои покупки', link: '/cart'},
+];
+
+export const SiteNavData = [
+  {text: 'Главная', link: '/'},
+  {text: 'Каталог игр', link: '/catalog'},
+  {text: 'Новинки', link: '/newgames'},
+  {text: 'Лидеры продаж', link: '/top'},
+  {text: 'Помощь', link: '/help'},
 ];

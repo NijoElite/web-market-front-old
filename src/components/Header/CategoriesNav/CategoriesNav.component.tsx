@@ -47,9 +47,8 @@ const CategoryItemTextStyled = styled.p`
   text-transform: uppercase;
 `;
 
-const NavWrapperStyled = styled.div`
+const CatNavWrapperStyled = styled.div`
   background: #f1f1f1;
-  margin-top: 15px;
   display: none;
 
   ${mediaMd} {
@@ -80,9 +79,13 @@ const CategoryItem: FC<CategoryItemProps> = memo(({className, catName, displayNa
   )  
 });
 
-export const CategoriesNav: FC = () => {
+interface CategoriesNavProps {
+  className?: string;
+}
+
+export const CategoriesNav: FC<CategoriesNavProps> = ({className}) => {
   return (
-    <NavWrapperStyled>  
+    <CatNavWrapperStyled className={className}>  
       <Container>
         <NavStyled>
           {navCategoriesData.categories.map((data) => {
@@ -90,5 +93,5 @@ export const CategoriesNav: FC = () => {
           })}
         </NavStyled>
       </Container>
-    </NavWrapperStyled>);
+    </CatNavWrapperStyled>);
 }
