@@ -11,9 +11,9 @@ const CatalogStyled = styled.div`
   justify-content: space-between;
 `;
 
-const GameCardStyled = styled(GameCard)`
+const ColumnStyled = styled.div`
   width: 50%;
-  border: 10px solid transparent;
+  padding: 10px;
 
   ${mediaMd} {
     width: 25%;
@@ -32,7 +32,10 @@ interface CatalogProps {
 export const Catalog: FC<CatalogProps> = ({games}) => {
   return (
     <CatalogStyled>
-      {games.map(game => <GameCardStyled game={game}/>)}
+      {games.map(game => (
+        <ColumnStyled>
+          <GameCard game={game}/>
+        </ColumnStyled>))}
     </CatalogStyled>
   );
 }
