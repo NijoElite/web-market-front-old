@@ -7,6 +7,7 @@ import { CategoriesNav } from './CategoriesNav/CategoriesNav.component';
 import { SearchForm } from './SearchForm/SearchForm.component';
 import { UserNav } from './UserNav/UserNav.component';
 import { SiteNav } from './SiteNav/SiteNav.component';
+import { Link } from 'react-router-dom';
 
 // #region styled
 const HeaderStyled = styled.header`
@@ -32,7 +33,7 @@ const TopHeader = styled.div`
   }
 `;
 
-const LogoStyled = styled.a`
+const LogoStyled = styled(Link)`
   ${linkReset}
   height: 100%; 
   padding: 5px 15px;
@@ -58,7 +59,7 @@ const TopColumnStyled = styled.div`
 
 const Logo: FC = () => {
   return (
-    <LogoStyled href='/'>
+    <LogoStyled to='/'>
       <img src='/img/logo.png' alt=''/>
     </LogoStyled>
   );

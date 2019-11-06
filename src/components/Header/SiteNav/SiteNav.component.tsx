@@ -3,6 +3,7 @@ import styled from "@emotion/styled/macro";
 import { mediaMd, linkColor, transition } from "../../../utils/css.utils";
 import { SiteNavData } from "../HeaderData";
 import { Container } from "../../../ui-kit/Container/Container.component";
+import { Link } from 'react-router-dom';
 
 // #region styled
 const NavStyled = styled.nav`
@@ -27,7 +28,7 @@ const ListItemStyled = styled.li`
   width: 100%;
 `;
 
-const LinkStyled = styled.a`
+const LinkStyled = styled(Link)`
   ${linkColor('#000')}
   ${transition('all')}
   text-decoration: none;
@@ -54,7 +55,7 @@ interface SiteNavProps {
 export const SiteNav: FC<SiteNavProps> = ({className}) => {
   const items = SiteNavData.map((el) => (
     <ListItemStyled key={el.link}>
-     <LinkStyled href={el.link}>{el.text}</LinkStyled>
+     <LinkStyled to={el.link}>{el.text}</LinkStyled>
     </ListItemStyled>)
     );
 

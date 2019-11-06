@@ -4,6 +4,7 @@ import { mediaMd, linkReset, transition, linkColor } from '../../../utils/css.ut
 import {navCategoriesData} from '../HeaderData';
 import { Icon } from '../../../ui-kit/Icon/Icon.component';
 import { Container } from '../../../ui-kit/Container/Container.component';
+import { Link } from 'react-router-dom';
 
 // #region styled
 const NavStyled = styled.nav`
@@ -18,7 +19,7 @@ const NavStyled = styled.nav`
   }
 `;
 
-const CategoryItemStyled = styled.a`
+const CategoryItemStyled = styled(Link)`
   ${linkReset};
   ${transition('all')};
   ${linkColor('#000000')};
@@ -70,7 +71,7 @@ interface CategoryItemProps {
 
 const CategoryItem: FC<CategoryItemProps> = memo(({className, catName, displayName}) => {
   return (
-    <CategoryItemStyled className={className} href={'/'+catName}>
+    <CategoryItemStyled to={'/'+catName} className={className}>
       <CategoryItemImageStyled>
         <Icon unicodeChar={catNameToUnicode(catName)}/>
       </CategoryItemImageStyled>

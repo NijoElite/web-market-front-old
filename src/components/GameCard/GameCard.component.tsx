@@ -3,6 +3,7 @@ import {Game} from '../../models/interfaces';
 import { linkColor } from '../../utils/css.utils';
 import styled from '@emotion/styled/macro';
 import { Currency } from '../../ui-kit/Currency/Currency.component';
+import { Link } from 'react-router-dom';
 
 // #region styled
 const ImageStyled = styled.img`
@@ -47,7 +48,7 @@ const PriceStyled = styled(Currency)`
   transition: all 0.15s linear;
 `;
 
-const GameCardStyled = styled.a`
+const GameCardStyled = styled(Link)`
   ${linkColor('#000')}
   position: relative;
   cursor: pointer;
@@ -75,7 +76,7 @@ interface GameCardProps {
 
 export const GameCard: FC<GameCardProps> = ({game, className}) => {
   return (
-    <GameCardStyled href={'/catalog/' + game.article} className={className}>
+    <GameCardStyled to={'/catalog/' + game.article} className={className}>
       <ImageStyled src={'' + game.imgUrl} alt=''/>
       <Hover/>
       <NameStyled>{game.name}</NameStyled>

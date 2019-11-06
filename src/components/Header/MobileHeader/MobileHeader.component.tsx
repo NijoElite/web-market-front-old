@@ -3,6 +3,7 @@ import styled from '@emotion/styled/macro';
 import { Burger } from '../../../ui-kit/Burger/Burger.component';
 import { linkColor, mediaMd, transition } from '../../../utils/css.utils';
 import {mobileNavData} from '../HeaderData';
+import { Link } from 'react-router-dom';
 
 // #region styled
 const HeaderStyled = styled('div')<{open: boolean}>`
@@ -69,7 +70,7 @@ export const MobileHeader: FC = () => {
       {
         list.map((item) => 
         <ListItemStyled key={item.link}>
-          <a href={item.link}>{item.text}</a>
+          <Link to={item.link}>{item.text}</Link>
         </ListItemStyled>)
       }
     </ListStyled>)
