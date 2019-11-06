@@ -46,6 +46,13 @@ const LogoStyled = styled.a`
 const TopColumnStyled = styled.div`
   width: 100%;
   padding: 0 15px;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+
+  ${mediaMd} {
+    display: block;
+  }
 `;
 // #endregion
 
