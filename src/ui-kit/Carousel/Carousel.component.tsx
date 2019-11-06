@@ -78,7 +78,7 @@ import { transition } from "../../utils/css.utils";
     overflow: hidden;
   `;
 
-  const ItemWrapper = styled('div')<{isVisible: boolean}>`
+  const CarouselItemWrapper = styled('div')<{isVisible: boolean}>`
     position: absolute;
     top: 0;
     left: 0;
@@ -99,6 +99,14 @@ import { transition } from "../../utils/css.utils";
 
     transform: scale(${({isVisible}): string => isVisible? '1' : '1.2'});
     transition: transform 7.5s linear;
+  `;
+
+  const ItemWrapper = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
   `;
 // #endregion
 
@@ -150,10 +158,10 @@ export const Carousel: FC<CarouselProps> = ({items, className, options}) => {
   return(
     <WrapperStyled className={className}>
       {items.map((item, i) => (
-        <ItemWrapper key={i} isVisible={i===curIndex}>
+        <CarouselItemWrapper key={i} isVisible={i===curIndex}>
           <BackgroundWrapper isVisible={i===curIndex}>{item.background}</BackgroundWrapper>
-          {item.item}
-        </ItemWrapper>)
+          <ItemWrapper>{item.item}</ItemWrapper>
+        </CarouselItemWrapper>)
       )}
 
       <PrevBtnStyled onClick={setPrevIndex}>
