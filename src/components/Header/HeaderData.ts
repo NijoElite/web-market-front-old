@@ -1,6 +1,6 @@
 export const navCategoriesData = {
   categories: [
-    {catName: 'action', unicode: '\\E002', displayName: 'Action'},
+    {catName: 'action', unicode: '\\E002', displayName: 'Action', fontSize: '0.75em'},
     {catName: 'adventure', unicode: '\\E003', displayName: 'Приключение'},
     {catName: 'arcade', unicode: '\\E004', displayName: 'Аркады'},
     {catName: 'mmo', unicode: '\\E005', displayName: 'MMO'},

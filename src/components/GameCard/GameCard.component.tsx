@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import {Game} from '../../models/interfaces';
+import {Product} from '../../models/interfaces';
 import { linkColor } from '../../utils/css.utils';
 import styled from '@emotion/styled/macro';
 import { Currency } from '../../ui-kit/Currency/Currency.component';
@@ -70,14 +70,14 @@ const GameCardStyled = styled(Link)`
 // #endregion
 
 interface GameCardProps {
-  game: Game;
+  game: Product;
   className?: string;
 }
 
 export const GameCard: FC<GameCardProps> = ({game, className}) => {
   return (
     <GameCardStyled to={'/catalog/' + game.article} className={className}>
-      <ImageStyled src={'' + game.imgUrl} alt=''/>
+      <ImageStyled src={'' + game.defaultImage} alt=''/>
       <Hover/>
       <NameStyled>{game.name}</NameStyled>
       <PriceStyled type='rub'>{game.price}</PriceStyled>

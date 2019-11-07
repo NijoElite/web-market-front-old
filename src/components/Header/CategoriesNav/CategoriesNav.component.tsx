@@ -27,7 +27,7 @@ const CategoryItemStyled = styled(Link)`
   width: ${100 / navCategoriesData.categories.length}%;
   text-align: center;
   font-size: 39px;
-  padding: 15px 0;
+  padding: 7px 0 14px 0;
 
   &:hover {
     background: #ffc608; 
@@ -58,9 +58,9 @@ const CatNavWrapperStyled = styled.div`
 `;
 // #endregion
 
-const catNameToUnicode = (catName: string): string => {
+const findCatIcon = (catName: string): {catName: string; unicode: string; displayName: string; fontSize?: string} => {
   const cat = navCategoriesData.categories.find((el) => el.catName === catName)
-  return cat ? cat.unicode : navCategoriesData.defaultCategory.unicode;
+  return cat || navCategoriesData.defaultCategory;
 }
 
 interface CategoryItemProps {
@@ -70,10 +70,11 @@ interface CategoryItemProps {
 }
 
 const CategoryItem: FC<CategoryItemProps> = memo(({className, catName, displayName}) => {
+  const cat = findCatIcon(catName);
   return (
-    <CategoryItemStyled to={'/'+catName} className={className}>
+    <CategoryItemStyled to={'/'+catName} className={className}  >
       <CategoryItemImageStyled>
-        <Icon unicodeChar={catNameToUnicode(catName)}/>
+        <Icon unicodeChar={cat.unicode} fontSize={cat.fontSize}/>
       </CategoryItemImageStyled>
       <CategoryItemTextStyled>{displayName}</CategoryItemTextStyled>
     </CategoryItemStyled>

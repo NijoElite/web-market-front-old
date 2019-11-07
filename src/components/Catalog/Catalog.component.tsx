@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import {Game} from '../../models/interfaces';
+import {Product} from '../../models/interfaces';
 import { mediaMd, mediaLg } from '../../utils/css.utils';
 import styled from '@emotion/styled/macro';
 import { GameCard } from '../GameCard/GameCard.component';
@@ -26,7 +26,7 @@ const ColumnStyled = styled.div`
 // #endregion
 
 interface CatalogProps {
-  games: Game[];
+  games: Product[];
   className?: string;
 }
 

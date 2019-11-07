@@ -1,8 +1,29 @@
-export interface Game {
-  name: string;
+export interface Product {
   article: string;
-  imgUrl: string;
+  ownerId: string;
+  name: string;
   description: string;
   price: number;
-  sliderUrl?: string;
+  requirements: {
+    option: string;
+    value: string;
+  }[];
+  publisher: string;
+  defaultImage: string;
+  sliderImage: string;
+  rating: number;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  secondName: string;
+  phone: string;
+}
+
+export interface Order {
+  customerId: string;
+  date: string;
 }
